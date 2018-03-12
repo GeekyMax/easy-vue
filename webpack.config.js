@@ -31,21 +31,30 @@ webpackConfig.module = {
     },
     {
       test: /\.vue$/,
-      loader: 'vue-loader',
+      use: [{
+        loader: 'vue-loader'
+      }],
     },
     {
       test: /\.js$/,
-      loader: 'babel-loader',
+      use: [{
+        loader: 'babel-loader'
+      }],
       exclude: /node_modules/,
     },
     {
       test: /\.(eot(|\?v=.*)|woff(|\?v=.*)|woff2(|\?v=.*)|ttf(|\?v=.*)|svg(|\?v=.*))$/,
-      loader: 'file-loader',
-      options: { name: 'fonts/[name].[ext]' },
+
+      use: [{
+        loader: 'file-loader',
+        options: { name: 'fonts/[name].[ext]' }
+      }]
     },
     {
       test: /\.(png|jpg|gif)$/,
-      loader: 'file-loader',
+      use: [{
+        loader: 'file-loader'
+      }],
     },
   ]
 };
